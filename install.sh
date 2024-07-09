@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-sudo pacman -S --noconfirm --needed wget base-devel git ttf-dejavu pipewire-jack rofi-wayland dunst swayidle swaybg waybar ly kitty caja atril eom engrampa mate-polkit firefox pavucontrol blueman fastfetch networkmanager fish kanshi ttc-iosevka-aile ttf-iosevkatermslab-nerd adobe-source-han-sans-otc-fonts kvantum qt6ct grim slurp swappy xdg-user-dirs pipewire pipewire-pulse pipewire-alsa wireplumber alsa-utils brightnessctl wlsunset wl-clipboard
+pacman -S --noconfirm --needed wget base-devel git ttf-dejavu pipewire-jack rofi-wayland dunst swayidle swaybg waybar ly kitty caja atril eom engrampa mate-polkit firefox pavucontrol blueman fastfetch networkmanager fish kanshi ttc-iosevka-aile ttf-iosevkatermslab-nerd adobe-source-han-sans-otc-fonts kvantum qt6ct grim slurp swappy xdg-user-dirs pipewire pipewire-pulse pipewire-alsa wireplumber alsa-utils brightnessctl wlsunset wl-clipboard
 git clone https://github.com/unwiredfromreality/dots-and-stuff.git
 cd dots-and-stuff/
-su joe && yay -S --noconfirm labwc-git nwg-drawer-bin waypaper-git gtklock pokemon-colorscripts-git resources
-cp -r .config ~/
-cp -r .local ~/
-cp -r .icons ~/
-cp -r .themes ~/
-sudo ln -s /usr/bin/rofi /usr/bin/dmenu
-sudo systemctl enable ly.service
-sudo systemctl enable NetworkManager.service
-sudo systemctl enable bluetooth.service
+sudo -u  joe yay -S --noconfirm labwc-git nwg-drawer-bin waypaper-git gtklock pokemon-colorscripts-git resources
+sudo -u  joe cp -r .config ~/
+sudo -u  joe cp -r .local ~/
+sudo -u  joe cp -r .icons ~/
+sudo -u  joe cp -r .themes ~/
+ln -s /usr/bin/rofi /usr/bin/dmenu
+systemctl enable ly.service
+systemctl enable NetworkManager.service
+systemctl enable bluetooth.service
 systemctl enable --user wireplumber.service
 gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-GM
 gsettings set org.gnome.desktop.interface cursor-size 32
@@ -22,8 +22,8 @@ gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 xdg-user-dirs-update
 xdg-mime default caja.desktop inode/directory
 pacman -Qqd | sudo pacman --noconfirm -Rsu -
-wget https://i.ibb.co/8B1tkBH/wallhaven-l87rxp.jpg -O ~/Pictures/wallpaper.jpg
+sudo -u  joe wget https://i.ibb.co/8B1tkBH/wallhaven-l87rxp.jpg -O ~/Pictures/wallpaper.jpg
 echo "Rebooting system in 5 seconds..."
 echo "After rebooting, you may now login to labwc session."
 sleep 5
-sudo reboot
+reboot
