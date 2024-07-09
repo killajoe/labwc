@@ -2,11 +2,7 @@
 sudo pacman -S --noconfirm --needed wget base-devel git ttf-dejavu pipewire-jack rofi-wayland dunst swayidle swaybg waybar ly kitty caja atril eom engrampa mate-polkit firefox pavucontrol blueman fastfetch networkmanager fish kanshi ttc-iosevka-aile ttf-iosevkatermslab-nerd adobe-source-han-sans-otc-fonts kvantum qt6ct grim slurp swappy xdg-user-dirs pipewire pipewire-pulse pipewire-alsa wireplumber alsa-utils brightnessctl wlsunset wl-clipboard
 git clone https://github.com/unwiredfromreality/dots-and-stuff.git
 cd dots-and-stuff/
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin/
-makepkg -si
-cd ..
-yay -S --noconfirm labwc-git nwg-drawer-bin waypaper-git gtklock pokemon-colorscripts-git resources
+su joe && yay -S --noconfirm labwc-git nwg-drawer-bin waypaper-git gtklock pokemon-colorscripts-git resources
 cp -r .config ~/
 cp -r .local ~/
 cp -r .icons ~/
